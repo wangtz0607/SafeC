@@ -56,7 +56,7 @@ directDeclarator
     : Identifier
     | directDeclarator NotNull? LeftBracket RightBracket
     | directDeclarator LeftBracket Ellipsis RightBracket
-    | directDeclarator LeftBracket assignmentExpression RightBracket
+    | directDeclarator LeftBracket constantExpression RightBracket
     | directDeclarator LeftParen parameterList? RightParen
     | LeftParen declarator RightParen;
 
@@ -65,9 +65,11 @@ abstractDeclarator: (Ast typeQualifier*)* directAbstractDeclarator;
 directAbstractDeclarator
     : NotNull? LeftBracket RightBracket
     | LeftBracket Ellipsis RightBracket
-    | LeftBracket assignmentExpression RightBracket
+    | LeftBracket constantExpression RightBracket
     | LeftParen parameterList? RightParen
-    | directAbstractDeclarator NotNull? LeftBracket assignmentExpression? RightBracket
+    | directAbstractDeclarator NotNull? LeftBracket RightBracket
+    | directAbstractDeclarator LeftBracket Ellipsis RightBracket
+    | directAbstractDeclarator LeftBracket constantExpression RightBracket
     | directAbstractDeclarator LeftParen parameterList? RightParen
     | LeftParen abstractDeclarator RightParen;
 

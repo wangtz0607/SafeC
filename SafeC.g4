@@ -102,6 +102,7 @@ expressionStatement: expression? Semi;
 
 selectionStatement
     : If LeftParen expression RightParen statement (Else statement)?
+    | If NotNull LeftParen Identifier RightParen statement (Else statement)?
     | Switch LeftParen expression RightParen statement;
 
 iterationStatement

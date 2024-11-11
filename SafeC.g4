@@ -84,6 +84,7 @@ initializer
 statement
     : labeledStatement
     | compoundStatement
+    | unsafeStatement
     | expressionStatement
     | selectionStatement
     | iterationStatement
@@ -95,6 +96,8 @@ labeledStatement
     | Default Colon statement;
 
 compoundStatement: LeftBrace blockItem* RightBrace;
+
+unsafeStatement: Unsafe LeftBrace blockItem* RightBrace;
 
 blockItem: statement | declaration;
 
@@ -226,6 +229,7 @@ Static: 'static';
 Struct: 'struct';
 Switch: 'switch';
 Union: 'union';
+Unsafe: 'unsafe';
 Unsigned: 'unsigned';
 Void: 'void';
 Volatile: 'volatile';

@@ -166,7 +166,7 @@ castExpression
     : LeftParen typeName RightParen castExpression
     | unaryExpression;
 
-unaryExpression: (PlusPlus | HyphHyph | Sizeof | Alignof | Countof)* (
+unaryExpression: (PlusPlus | HyphHyph | Sizeof | Alignof | Countof | NotNullCast)* (
     postfixExpression
     | unaryOperator castExpression
     | (Sizeof | Alignof) LeftParen typeName RightParen
@@ -214,6 +214,7 @@ Inline: 'inline';
 Int: 'int';
 Long: 'long';
 NotNull: 'not_null';
+NotNullCast: 'not_null_cast';
 Null: 'null';
 Restrict: 'restrict';
 Return: 'return';
